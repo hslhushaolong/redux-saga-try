@@ -1,5 +1,6 @@
 /*eslint-disable no-unused-vars */
 import React, { Component, PropTypes } from 'react'
+import ShopComponent from './component';
 
 const Counter = ({ value, onIncrementAsync, onIncrement, onDecrement }) =>
       <div>
@@ -17,6 +18,7 @@ const Counter = ({ value, onIncrementAsync, onIncrement, onDecrement }) =>
         <hr />
         <div>
           Clicked: {value} times
+          <ShopComponent />
         </div>
       </div>
 

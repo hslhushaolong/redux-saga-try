@@ -8,7 +8,7 @@ export function* incrementAsync() {
     console.log('saga: incrementAsync')
     // // const action= yield take('INCREMENT');
     // // console.log(action);
-    yield put({ type: 'increment' })
+    // yield put({ type: 'increment' })
     // }
 }
 export function* twofunc() {
@@ -19,14 +19,15 @@ export function* twofunc() {
       // // console.log(action);
       // yield put({ type: 'increment' })
       // }
-
-    yield put({ type: 'INCREMENT_IF_ODD' })
+    
+      console.log('saga: twofunc')
+    // yield put({ type: 'INCREMENT_IF_ODD' })
   }
 
 // Our watcher Saga: 在每个 INCREMENT_ASYNC action spawn 一个新的 incrementAsync 任务
 export function* watchIncrementAsync() {
   yield takeEvery('INCREMENT_ASYNC', incrementAsync)
-  yield takeEvery('twofunc', twofunc)
+  yield takeEvery('INCREMENT_ASYNC', twofunc)
 }
 
 export function* helloSaga() {
