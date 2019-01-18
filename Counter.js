@@ -1,8 +1,25 @@
 /*eslint-disable no-unused-vars */
 import React, { Component, PropTypes } from 'react'
-import ShopComponent from './component';
+// import { connect } from 'react-redux';
+// import { bindActionCreators } from 'redux';
+// import * as ActionCreators from './action';
 
-const Counter = ({ value, onIncrementAsync, onIncrement, onDecrement }) =>
+// import ShopComponent from './component';
+class Counter extends Component {
+  constructor(props) {
+    super(props)
+    // this.bindActionCreators=bindActionCreators(ActionCreators);
+    // console.log(this.boundActionCreators)
+    console.log(props);
+    this.state = {
+       
+    }
+  }
+  
+  
+  render() {
+    const { value, onIncrementAsync, onIncrement, onDecrement } = this.props;
+    return (
       <div>
         <button onClick={onIncrementAsync}>
           Increment after 1 second
@@ -18,14 +35,17 @@ const Counter = ({ value, onIncrementAsync, onIncrement, onDecrement }) =>
         <hr />
         <div>
           Clicked: {value} times
-          <ShopComponent />
+          {/* <ShopComponent /> */}
         </div>
       </div>
-
-Counter.propTypes = {
-  value: PropTypes.number.isRequired,
-  onIncrement: PropTypes.func.isRequired,
-  onDecrement: PropTypes.func.isRequired
+    )
+  }
 }
+
+// Counter.propTypes = {
+//   value: PropTypes.number.isRequired,
+//   onIncrement: PropTypes.func.isRequired,
+//   onDecrement: PropTypes.func.isRequired
+// }
 
 export default Counter
